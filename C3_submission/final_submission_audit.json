@@ -1,0 +1,337 @@
+{
+  "root": "/home/mig29/agentic4system/Agentic4SystemSummerSchoolContest/Track-C/C3-scheduler/C3_submission",
+  "mode": "dry-run",
+  "cleanup": {
+    "candidates": [],
+    "actions": [
+      "would delete cache: runtime/__pycache__",
+      "would delete cache: scheduler/__pycache__",
+      "would delete cache: tests/__pycache__",
+      "would delete cache: scheduler/memory/__pycache__",
+      "would delete cache: scheduler/graph_passes/__pycache__",
+      "would delete bytecode: runtime/__pycache__/cupy_graph_runner.cpython-312.pyc",
+      "would delete bytecode: runtime/__pycache__/onnx_runner.cpython-312.pyc",
+      "would delete bytecode: runtime/__pycache__/__init__.cpython-312.pyc",
+      "would delete bytecode: runtime/__pycache__/io.cpython-312.pyc",
+      "would delete bytecode: scheduler/__pycache__/onnx_importer.cpython-312.pyc",
+      "would delete bytecode: scheduler/__pycache__/tuning_cache.cpython-312.pyc",
+      "would delete bytecode: scheduler/__pycache__/graph.cpython-312.pyc",
+      "would delete bytecode: scheduler/__pycache__/benchmark.cpython-312.pyc",
+      "would delete bytecode: scheduler/__pycache__/__init__.cpython-312.pyc",
+      "would delete bytecode: scheduler/__pycache__/types.cpython-312.pyc",
+      "would delete bytecode: scheduler/__pycache__/strategy.cpython-312.pyc",
+      "would delete bytecode: scheduler/__pycache__/fused_ops.cpython-312.pyc",
+      "would delete bytecode: scheduler/__pycache__/fusion.cpython-312.pyc",
+      "would delete bytecode: scheduler/__pycache__/hardware.cpython-312.pyc",
+      "would delete bytecode: scheduler/__pycache__/autotune.cpython-312.pyc",
+      "would delete bytecode: scheduler/memory/__pycache__/planner.cpython-312.pyc",
+      "would delete bytecode: scheduler/memory/__pycache__/plan_builder.cpython-312.pyc",
+      "would delete bytecode: scheduler/memory/__pycache__/prefetch.cpython-312.pyc",
+      "would delete bytecode: scheduler/memory/__pycache__/backend.cpython-312.pyc",
+      "would delete bytecode: scheduler/memory/__pycache__/__init__.cpython-312.pyc",
+      "would delete bytecode: scheduler/memory/__pycache__/weight_store.cpython-312.pyc",
+      "would delete bytecode: scheduler/memory/__pycache__/pool.cpython-312.pyc",
+      "would delete bytecode: scheduler/memory/__pycache__/execution_plan.cpython-312.pyc",
+      "would delete bytecode: scheduler/memory/__pycache__/stream_scheduler.cpython-312.pyc",
+      "would delete bytecode: scheduler/graph_passes/__pycache__/__init__.cpython-312.pyc",
+      "would delete bytecode: scheduler/graph_passes/__pycache__/pipeline.cpython-312.pyc",
+      "would delete bytecode: scheduler/graph_passes/__pycache__/fusion.cpython-312.pyc",
+      "would delete bytecode: tests/__pycache__/test_c33_numerical.cpython-312.pyc",
+      "would delete bytecode: tests/__pycache__/test_c34_backend_weight_store.cpython-312.pyc",
+      "would delete bytecode: tests/__pycache__/test_c34_prefetch_stream_scheduler.cpython-312.pyc",
+      "would delete bytecode: tests/__pycache__/test_c34_memory_foundation.cpython-312.pyc",
+      "would delete bytecode: tests/__pycache__/test_c33_fusions.cpython-312.pyc",
+      "would delete bytecode: tests/__pycache__/test_c34_lifetime_reuse.cpython-312.pyc",
+      "would delete bytecode: tests/__pycache__/test_c34_execution_plan_builder.cpython-312.pyc",
+      "would delete bytecode: tests/__pycache__/test_fused_strategy.cpython-312.pyc"
+    ]
+  },
+  "findings": [],
+  "imports": {
+    "scheduler": {
+      "file": "/home/mig29/agentic4system/Agentic4SystemSummerSchoolContest/Track-C/C3-scheduler/C3_submission/scheduler/__init__.py",
+      "exports": {
+        "Graph": true,
+        "GraphNode": true,
+        "HardwareSpec": true,
+        "KernelSpecRef": true,
+        "KernelTuningParams": true,
+        "PrecisionProfile": true,
+        "ProblemSize": true,
+        "SchedulingStrategy": true,
+        "import_onnx_graph": true
+      }
+    },
+    "scheduler.graph_passes": {
+      "file": "/home/mig29/agentic4system/Agentic4SystemSummerSchoolContest/Track-C/C3-scheduler/C3_submission/scheduler/graph_passes/__init__.py",
+      "exports": {
+        "FusionPass": true,
+        "GraphPassPipeline": true
+      }
+    },
+    "SchedulingStrategy.__init__": "(self, hardware: 'HardwareSpec | None' = None, *, full_fp32: 'bool' = False, autotune_mode: 'str | None' = None, tuning_cache_path: 'str' = 'tuning_cache.json') -> 'None'",
+    "GraphPassPipeline.__init__": "(self, *, enable_fusion: 'bool' = True, validate_each_pass: 'bool' = True, **_: 'Any') -> 'None'"
+  },
+  "scheduler_init": {
+    "content": "from .fusion import FusionPass\nfrom scheduler import FusionPass\nfrom .graph import Graph, GraphNode\nfrom .onnx_importer import import_onnx_graph\nfrom .graph_passes import GraphPassPipeline\nfrom .strategy import SchedulingStrategy, hardware, strategy\nfrom .types import (\n    HardwareSpec,\n    KernelSpecRef,\n    KernelTuningParams,\n    PrecisionProfile,\n    ProblemSize,\n    TensorInfo,\n)\n\n__all__ = [\n    \"Graph\",\n    \"GraphNode\",\n    \"TensorInfo\",\n    \"PrecisionProfile\",\n    \"KernelSpecRef\",\n    \"KernelTuningParams\",\n    \"ProblemSize\",\n    \"HardwareSpec\",\n    \"SchedulingStrategy\",\n    \"hardware\",\n    \"strategy\",\n    \"import_onnx_graph\",\n    \"FusionPass\",\n    \"GraphPassPipeline\",\n]\n",
+    "imported_names": [
+      "FusionPass",
+      "Graph",
+      "GraphNode",
+      "GraphPassPipeline",
+      "HardwareSpec",
+      "KernelSpecRef",
+      "KernelTuningParams",
+      "PrecisionProfile",
+      "ProblemSize",
+      "SchedulingStrategy",
+      "TensorInfo",
+      "hardware",
+      "import_onnx_graph",
+      "strategy"
+    ],
+    "__all__": [
+      "Graph",
+      "GraphNode",
+      "TensorInfo",
+      "PrecisionProfile",
+      "KernelSpecRef",
+      "KernelTuningParams",
+      "ProblemSize",
+      "HardwareSpec",
+      "SchedulingStrategy",
+      "hardware",
+      "strategy",
+      "import_onnx_graph",
+      "FusionPass",
+      "GraphPassPipeline"
+    ]
+  },
+  "test_suite": {
+    "passed": true,
+    "results": [
+      {
+        "command": [
+          "/usr/bin/python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-v"
+        ],
+        "returncode": 0,
+        "passed": true,
+        "stdout": "",
+        "stderr": "test_fused_conv2d_batchnorm_with_weight_fold (test_c33_fusions.FusionPatternTests.test_fused_conv2d_batchnorm_with_weight_fold) ... ok\ntest_fused_ew_chain (test_c33_fusions.FusionPatternTests.test_fused_ew_chain) ... ok\ntest_fused_matmul_bias (test_c33_fusions.FusionPatternTests.test_fused_matmul_bias) ... ok\ntest_fused_residual_norm (test_c33_fusions.FusionPatternTests.test_fused_residual_norm) ... ok\ntest_fused_softmax_dropout (test_c33_fusions.FusionPatternTests.test_fused_softmax_dropout) ... ok\ntest_conv_bn_fold_matches_unfused_reference (test_c33_numerical.C33NumericalCorrectnessTests.test_conv_bn_fold_matches_unfused_reference) ... ok\ntest_conv_bn_fold_without_original_bias (test_c33_numerical.C33NumericalCorrectnessTests.test_conv_bn_fold_without_original_bias) ... ok\ntest_elementwise_chain_fused_semantics (test_c33_numerical.C33NumericalCorrectnessTests.test_elementwise_chain_fused_semantics) ... ok\ntest_fused_nodes_schedule_to_dedicated_kernels (test_c33_numerical.C33NumericalCorrectnessTests.test_fused_nodes_schedule_to_dedicated_kernels) ... ok\ntest_graph_output_intermediate_is_not_fused (test_c33_numerical.C33NumericalCorrectnessTests.test_graph_output_intermediate_is_not_fused) ... ok\ntest_matmul_bias_fused_semantics (test_c33_numerical.C33NumericalCorrectnessTests.test_matmul_bias_fused_semantics) ... ok\ntest_multi_consumer_intermediate_is_not_fused (test_c33_numerical.C33NumericalCorrectnessTests.test_multi_consumer_intermediate_is_not_fused) ... ok\ntest_residual_norm_fused_semantics (test_c33_numerical.C33NumericalCorrectnessTests.test_residual_norm_fused_semantics) ... ok\ntest_softmax_dropout_inference_semantics (test_c33_numerical.C33NumericalCorrectnessTests.test_softmax_dropout_inference_semantics) ... ok\ntest_backend_view_matches_host_values (test_c34_backend_weight_store.DeviceBackendAndWeightStoreTests.test_backend_view_matches_host_values) ... ok\ntest_insufficient_capacity_raises (test_c34_backend_weight_store.DeviceBackendAndWeightStoreTests.test_insufficient_capacity_raises) ... ok\ntest_stats (test_c34_backend_weight_store.DeviceBackendAndWeightStoreTests.test_stats) ... ok\ntest_weight_preload_uploads_once (test_c34_backend_weight_store.DeviceBackendAndWeightStoreTests.test_weight_preload_uploads_once) ... ok\ntest_weight_records_have_distinct_offsets (test_c34_backend_weight_store.DeviceBackendAndWeightStoreTests.test_weight_records_have_distinct_offsets) ... ok\ntest_activation_allocations_exist (test_c34_execution_plan_builder.ExecutionPlanBuilderTests.test_activation_allocations_exist) ... ok\ntest_build_complete_plan (test_c34_execution_plan_builder.ExecutionPlanBuilderTests.test_build_complete_plan) ... ok\ntest_kernel_steps_have_valid_tuning (test_c34_execution_plan_builder.ExecutionPlanBuilderTests.test_kernel_steps_have_valid_tuning) ... ok\ntest_stats_are_complete (test_c34_execution_plan_builder.ExecutionPlanBuilderTests.test_stats_are_complete) ... ok\ntest_weights_are_preloaded (test_c34_execution_plan_builder.ExecutionPlanBuilderTests.test_weights_are_preloaded) ... ok\ntest_builder_attaches_optional_stream_schedule (test_c34_execution_plan_builder.StreamPlanIntegrationTests.test_builder_attaches_optional_stream_schedule) ... ok\ntest_attach_plan_to_execution_plan (test_c34_lifetime_reuse.LifetimeReusePlannerTests.test_attach_plan_to_execution_plan) ... ok\ntest_graph_lifetimes_enable_intermediate_reuse (test_c34_lifetime_reuse.LifetimeReusePlannerTests.test_graph_lifetimes_enable_intermediate_reuse) ... ok\ntest_non_overlapping_tensors_reuse_offset (test_c34_lifetime_reuse.LifetimeReusePlannerTests.test_non_overlapping_tensors_reuse_offset) ... ok\ntest_overlapping_tensors_do_not_share_memory (test_c34_lifetime_reuse.LifetimeReusePlannerTests.test_overlapping_tensors_do_not_share_memory) ... ok\ntest_tight_capacity_succeeds_due_to_reuse (test_c34_lifetime_reuse.LifetimeReusePlannerTests.test_tight_capacity_succeeds_due_to_reuse) ... ok\ntest_allocate_free_and_reuse (test_c34_memory_foundation.DeviceMemoryPoolTests.test_allocate_free_and_reuse) ... ok\ntest_free_blocks_are_coalesced (test_c34_memory_foundation.DeviceMemoryPoolTests.test_free_blocks_are_coalesced) ... ok\ntest_execution_plan_validation (test_c34_memory_foundation.ExecutionPlanTests.test_execution_plan_validation) ... ok\ntest_analyze_graph_lifetimes (test_c34_memory_foundation.LifetimeTests.test_analyze_graph_lifetimes) ... ok\ntest_lifetime_overlap (test_c34_memory_foundation.LifetimeTests.test_lifetime_overlap) ... ok\ntest_dependent_steps_remain_on_same_compute_stream (test_c34_prefetch_stream_scheduler.PrefetchAndStreamSchedulerTests.test_dependent_steps_remain_on_same_compute_stream) ... ok\ntest_prefetch_only_first_consumer (test_c34_prefetch_stream_scheduler.PrefetchAndStreamSchedulerTests.test_prefetch_only_first_consumer) ... ok\ntest_prefetch_plan_contains_weight_markers (test_c34_prefetch_stream_scheduler.PrefetchAndStreamSchedulerTests.test_prefetch_plan_contains_weight_markers) ... ok\ntest_schedule_stats (test_c34_prefetch_stream_scheduler.PrefetchAndStreamSchedulerTests.test_schedule_stats) ... ok\ntest_stream_scheduler_attaches_wait_events (test_c34_prefetch_stream_scheduler.PrefetchAndStreamSchedulerTests.test_stream_scheduler_attaches_wait_events) ... ok\ntest_conv_bn_uses_fused_kernel (test_fused_strategy.FusedStrategyIntegrationTests.test_conv_bn_uses_fused_kernel) ... ok\ntest_matmul_bias_uses_fused_kernel (test_fused_strategy.FusedStrategyIntegrationTests.test_matmul_bias_uses_fused_kernel) ... ok\ntest_sensitive_fused_ops_are_fp32 (test_fused_strategy.FusedStrategyIntegrationTests.test_sensitive_fused_ops_are_fp32) ... ok\n\n----------------------------------------------------------------------\nRan 43 tests in 0.029s\n\nOK\n"
+      }
+    ]
+  },
+  "manifest": [
+    {
+      "path": "README.md",
+      "size_bytes": 3471,
+      "category": "report-or-tool"
+    },
+    {
+      "path": "export_dag.py",
+      "size_bytes": 6980,
+      "category": "report-or-tool"
+    },
+    {
+      "path": "final_submission_audit.py",
+      "size_bytes": 19219,
+      "category": "report-or-tool"
+    },
+    {
+      "path": "infer_worker.py",
+      "size_bytes": 3570,
+      "category": "report-or-tool"
+    },
+    {
+      "path": "runtime/__init__.py",
+      "size_bytes": 163,
+      "category": "report-or-tool"
+    },
+    {
+      "path": "runtime/cupy_graph_runner.py",
+      "size_bytes": 19384,
+      "category": "report-or-tool"
+    },
+    {
+      "path": "runtime/io.py",
+      "size_bytes": 1313,
+      "category": "report-or-tool"
+    },
+    {
+      "path": "runtime/onnx_runner.py",
+      "size_bytes": 3902,
+      "category": "report-or-tool"
+    },
+    {
+      "path": "scheduler/__init__.py",
+      "size_bytes": 688,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/autotune.py",
+      "size_bytes": 4281,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/benchmark.py",
+      "size_bytes": 8734,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/fused_ops.py",
+      "size_bytes": 7055,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/fusion.py",
+      "size_bytes": 8314,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/graph.py",
+      "size_bytes": 6300,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/graph_passes/__init__.py",
+      "size_bytes": 118,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/graph_passes/fusion.py",
+      "size_bytes": 14350,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/graph_passes/pipeline.py",
+      "size_bytes": 1581,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/hardware.py",
+      "size_bytes": 4654,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/memory/__init__.py",
+      "size_bytes": 1303,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/memory/backend.py",
+      "size_bytes": 4443,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/memory/execution_plan.py",
+      "size_bytes": 4474,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/memory/plan_builder.py",
+      "size_bytes": 10299,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/memory/planner.py",
+      "size_bytes": 10128,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/memory/pool.py",
+      "size_bytes": 9020,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/memory/prefetch.py",
+      "size_bytes": 7240,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/memory/stream_scheduler.py",
+      "size_bytes": 6014,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/memory/weight_store.py",
+      "size_bytes": 5033,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/onnx_importer.py",
+      "size_bytes": 7279,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/strategy.py",
+      "size_bytes": 26742,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/tuning_cache.py",
+      "size_bytes": 4510,
+      "category": "production"
+    },
+    {
+      "path": "scheduler/types.py",
+      "size_bytes": 3337,
+      "category": "production"
+    },
+    {
+      "path": "tests/test_c33_fusions.py",
+      "size_bytes": 4368,
+      "category": "test"
+    },
+    {
+      "path": "tests/test_c33_numerical.py",
+      "size_bytes": 15428,
+      "category": "test"
+    },
+    {
+      "path": "tests/test_c34_backend_weight_store.py",
+      "size_bytes": 4120,
+      "category": "test"
+    },
+    {
+      "path": "tests/test_c34_execution_plan_builder.py",
+      "size_bytes": 5345,
+      "category": "test"
+    },
+    {
+      "path": "tests/test_c34_lifetime_reuse.py",
+      "size_bytes": 5876,
+      "category": "test"
+    },
+    {
+      "path": "tests/test_c34_memory_foundation.py",
+      "size_bytes": 4248,
+      "category": "test"
+    },
+    {
+      "path": "tests/test_c34_prefetch_stream_scheduler.py",
+      "size_bytes": 5322,
+      "category": "test"
+    },
+    {
+      "path": "tests/test_fused_strategy.py",
+      "size_bytes": 3636,
+      "category": "test"
+    },
+    {
+      "path": "validate_c32_c33.py",
+      "size_bytes": 3312,
+      "category": "report-or-tool"
+    }
+  ],
+  "summary": {
+    "passed": true,
+    "errors": 0,
+    "warnings": 0
+  }
+}
