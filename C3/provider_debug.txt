@@ -1,0 +1,4 @@
+/workspace/C3/testcases/models/mlp_v1.onnx: ['CUDAExecutionProvider', 'CPUExecutionProvider']
+/workspace/C3/testcases/models/mlp_v1.onnx: ['CUDAExecutionProvider', 'CPUExecutionProvider']
+/workspace/C3/testcases/models/resnet_v1.onnx: ['CUDAExecutionProvider', 'CPUExecutionProvider']
+/workspace/C3/testcases/models/transformer_v1.onnx: ['CUDAExecutionProvider', 'CPUExecutionProvider']
